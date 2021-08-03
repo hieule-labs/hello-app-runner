@@ -1,8 +1,7 @@
-name: main
+name: Publish to ECR
 
 on:
-  push:
-    branches: main
+  workflow_dispatch:
 
 jobs:
   login:
@@ -28,4 +27,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: public.ecr.aws/aws-containers/hello-app-runner:latest
+          tags: ${{ secrets.ECR_URI }}:latest
