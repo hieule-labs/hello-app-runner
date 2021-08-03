@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  login:
+  container-image:
+    name: Build and publish container image
     runs-on: ubuntu-latest
     steps:
       - name: Check Out Repo
@@ -32,4 +33,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: $ECR_REGISTRY/$ECR_REPOSITORY:latest
+          tags: ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:latest
