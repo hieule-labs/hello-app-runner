@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.AWS_ACCESS_KEY_ID }}
           password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         env:
-          AWS_REGION: us-east-1
+          AWS_REGION: ap-northeast-1
 
       - name: Build and push container
         uses: docker/build-push-action@v2
